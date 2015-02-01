@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    
+}
 
-
+@property (nonatomic, weak) IBOutlet UIView *frontView;
+@property (nonatomic, weak) IBOutlet UIView *backView;
+@property (nonatomic, weak) IBOutlet UIButton *flipButton;
+-(IBAction)flip:(id)sender;
 @end
 

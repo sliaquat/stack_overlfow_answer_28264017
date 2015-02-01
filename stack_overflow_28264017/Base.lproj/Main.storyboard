@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +15,49 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jtz-e7-fYL" userLabel="BackView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.80379971590909094" green="0.056455924989396958" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2g-xi-sjX" userLabel="FrontView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="8.506496923801926e-17" green="0.087728264043969856" blue="0.76619712752525249" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUw-sr-xXR">
+                                <rect key="frame" x="285" y="285" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="ZQO-58-a5p"/>
+                                    <constraint firstAttribute="height" constant="30" id="gx9-B8-31Q"/>
+                                </constraints>
+                                <state key="normal" title="Flip">
+                                    <color key="titleColor" red="1" green="0.97458169757763169" blue="0.99420076662380019" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jaM-bk-4e2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="jUw-sr-xXR" secondAttribute="centerX" id="3LK-jF-FAP"/>
+                            <constraint firstAttribute="trailing" secondItem="y2g-xi-sjX" secondAttribute="trailing" id="708-Xg-sFz"/>
+                            <constraint firstItem="y2g-xi-sjX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IF0-7C-K6J"/>
+                            <constraint firstItem="y2g-xi-sjX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="K5Q-dw-lSe"/>
+                            <constraint firstAttribute="centerY" secondItem="jUw-sr-xXR" secondAttribute="centerY" id="Mv9-gV-T5k"/>
+                            <constraint firstItem="Jtz-e7-fYL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TTe-jK-gOs"/>
+                            <constraint firstAttribute="trailing" secondItem="Jtz-e7-fYL" secondAttribute="trailing" id="ake-Ru-xvg"/>
+                            <constraint firstItem="Jtz-e7-fYL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ht5-Vw-Yb8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="y2g-xi-sjX" secondAttribute="bottom" id="pih-2R-bcS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jtz-e7-fYL" secondAttribute="bottom" id="x5t-aI-cHX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backView" destination="Jtz-e7-fYL" id="bGL-F5-czS"/>
+                        <outlet property="flipButton" destination="jUw-sr-xXR" id="Xda-Yk-d8p"/>
+                        <outlet property="frontView" destination="y2g-xi-sjX" id="UXu-k4-GJm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
